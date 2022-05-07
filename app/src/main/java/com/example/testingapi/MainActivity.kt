@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testingapi.api.ViewModel.MainViewModel
 import com.example.testingapi.api.Adapter.MainAdapter
 import com.example.testingapi.databinding.ActivityMainBinding
@@ -25,12 +26,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.recyclerview.adapter = adapter
+        binding.recyclerview.layoutManager = GridLayoutManager(this,2)
         viewModel.dataList.observe(this, Observer {
             Log.d(TAG, "onCreate: $it")
             adapter.setDataList(it)
         })
+
         viewModel.errorMessage.observe(this, Observer {
         })
         viewModel.getAllData()
     }
 }
+
+
+
+
+
+
+
+
+
+
