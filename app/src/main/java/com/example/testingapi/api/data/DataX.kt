@@ -3,13 +3,13 @@ package com.example.testingapi.api.data
 import com.google.gson.annotations.SerializedName
 
 data class DataX(
-    @SerializedName("Countfollowers")
+    @SerializedName("countfollowers")
     val countfollowers: String,
-    @SerializedName("Countpiemates")
+    @SerializedName("countpiemates")
     val countpiemates: String,
-    @SerializedName("Cover_pic")
+    @SerializedName("cover_pic")
     val cover_pic: String,
-    @SerializedName("Creation_datetime")
+    @SerializedName("creation_datetime")
     val creation_datetime: String,
     val email_id: String,
     val first_name: String,
@@ -18,7 +18,7 @@ data class DataX(
     val last_name: String,
     val post_at: String,
 
-    @SerializedName("Profile_pic")
+    @SerializedName("profile_pic")
     val profile_pic: String,
     val profile_status: String,
     val status: String,

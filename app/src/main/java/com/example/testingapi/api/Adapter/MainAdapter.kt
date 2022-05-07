@@ -11,11 +11,14 @@ import com.example.testingapi.databinding.AdapterDataBinding
 
 class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     class MainViewHolder(val binding: AdapterDataBinding) : RecyclerView.ViewHolder(binding.root) {
+
     }
     var data = mutableListOf<DataX>()
     fun setDataList(data: List<DataX>) {
         this.data = data.toMutableList()
+
         notifyDataSetChanged()
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,9 +26,11 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         return MainViewHolder(binding)
     }
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
+
         val data = data[position]
-        holder.binding.textName.text = data.user_id
-        holder.binding.textCount.text = data.last_name
+        holder.binding.textName.text = data.user_name
+        val piemates= data.countfollowers
+        holder.binding.textPrice.text = "$piemates Piemates "
         Glide.with(holder.itemView.context)
             .load(data.profile_pic)
             .centerCrop()
