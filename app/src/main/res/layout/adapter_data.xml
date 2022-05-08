@@ -16,12 +16,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
 
             android:id="@+id/img"
+            style="@style/roundedCornersImageView"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            style="@style/roundedCornersImageView"
             android:scaleType="fitXY"
             android:src="@drawable/jj"
             card_view:layout_constraintEnd_toEndOf="parent"
@@ -29,41 +29,58 @@
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/background"
+            android:id="@+id/profile"
+            style="@style/roundedCornersImageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            style="@style/roundedCornersImageView"
-            card_view:shapeAppearanceOverlay="@style/roundedCornersImageView"
+            android:layout_marginTop="84dp"
             android:scaleType="centerInside"
             android:src="@drawable/jj"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:shapeAppearanceOverlay="@style/roundedCornersImageView" />
+
         <TextView
             android:id="@+id/textName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/img"
             android:layout_margin="12dp"
+            android:layout_marginStart="12dp"
             android:layout_toRightOf="@+id/img"
             android:text="Title"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/img" />
+            card_view:layout_constraintTop_toBottomOf="@+id/profile" />
 
         <TextView
             android:id="@+id/textPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img"
-            android:layout_toRightOf="@+id/img"
             android:layout_marginStart="12dp"
             android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@+id/img"
+            android:textAlignment="center"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="@+id/textName"
             card_view:layout_constraintTop_toBottomOf="@+id/textName"
+            card_view:layout_constraintVertical_bias="0.305"
             tools:text="1800" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Follow"
+            android:textColor="@color/purple_700"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/textPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

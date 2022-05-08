@@ -32,10 +32,17 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         val piemates= data.countfollowers
         holder.binding.textPrice.text = "$piemates Piemates "
         Glide.with(holder.itemView.context)
-            .load(data.profile_pic)
+            .load(data.cover_pic)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.DATA)
             .into(holder.binding.img)
+
+         Glide.with(holder.itemView.context)
+            .load(data.profile_pic)
+            .centerCrop()
+            .diskCacheStrategy(DiskCacheStrategy.DATA)
+            .into(holder.binding.profile)
+
     }
     override fun getItemCount(): Int {
         return data.size
