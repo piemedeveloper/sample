@@ -31,14 +31,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+
     buildFeatures {
         viewBinding = true
 
     }
-    composeOptions {
-        kotlinCompilerVersion "1.5.10"
-        kotlinCompilerExtensionVersion "1.0.0-beta08"
-    }
+
 }
 
 
@@ -70,14 +71,15 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
 
     // Coroutine Lifecycle Scopes
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
 
     implementation "com.google.accompanist:accompanist-flowlayout:0.17.0"
+
 }
 kapt {
     correctErrorTypes = true
