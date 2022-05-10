@@ -66,7 +66,7 @@ fun CountDownIndicator(
                     text = time,
                     color = Color.White,
                     fontFamily = FontFamily(Font(R.font.poppins_semibold)),
-                    style = MaterialTheme.typography.h2,
+                    style = MaterialTheme.typography.h4,
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     fontWeight = FontWeight.Bold
                 )

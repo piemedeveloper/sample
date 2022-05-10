@@ -1,18 +1,28 @@
 package com.example.testingapi.api.compose.view
 
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.testingapi.R
 import com.example.testingapi.api.ViewModel.ComposeViewModel
 import com.example.testingapi.api.compose.view.components.CountDownButton
 import com.example.testingapi.api.compose.view.components.ShowCelebration
@@ -49,6 +59,8 @@ fun CountDownView(
         if (celebrate){
             ShowCelebration()
         }
+Spacer(modifier = Modifier.height(10.dp))
+
 
         Text(
             text = "Pieme",
@@ -59,8 +71,6 @@ fun CountDownView(
                 .fillMaxWidth()
                 .padding(20.dp),
             fontFamily = FontFamily(Font(com.example.testingapi.R.font.poppins_semibold))
-
-
         )
 
         Text(
@@ -76,7 +86,28 @@ fun CountDownView(
         )
 
         Text(
-            text = "Average response time: $time",
+            text = "Available From:NaN",
+            color = androidx.compose.ui.graphics.Color.White,
+            fontSize = 14.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxWidth(),
+            fontFamily = FontFamily(Font(com.example.testingapi.R.font.poppins_semibold))
+
+        )
+
+        Text(
+            text = "Delivery Time: Less than 30 minutes",
+            color = androidx.compose.ui.graphics.Color.White,
+            fontSize = 14.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxWidth(),
+            fontFamily = FontFamily(Font(com.example.testingapi.R.font.poppins_semibold))
+
+        )
+        Text(
+            text = "Average response time: 20min",
             color = androidx.compose.ui.graphics.Color.White,
             fontSize = 14.sp,
             textAlign = TextAlign.Center,
