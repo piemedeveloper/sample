@@ -1,10 +1,15 @@
 package com.example.testingapi.api.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.testingapi.ComposeActivity
+import com.example.testingapi.MainActivity
 import com.example.testingapi.api.data.DataMan
 import com.example.testingapi.api.data.DataX
 import com.example.testingapi.databinding.AdapterDataBinding
@@ -43,6 +48,12 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
             .diskCacheStrategy(DiskCacheStrategy.DATA)
             .into(holder.binding.profile)
 
+        holder.binding.btnn.setOnClickListener {
+            val context=holder.binding.btnn.context
+            val intent = Intent( context, ComposeActivity::class.java)
+            context.startActivity(intent)
+
+        }
     }
     override fun getItemCount(): Int {
         return data.size
