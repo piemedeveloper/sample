@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/custom_bottom.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_baseline_pause_24.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_baseline_replay_24.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_comment.xml" value="0.2025" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.118" />
         <entry key="app/src/main/res/layout/Card_gratification.xml" value="0.26510416666666664" />
         <entry key="app/src/main/res/layout/activity_compose.xml" value="0.22708333333333333" />
@@ -19,6 +20,7 @@
         <entry key="app/src/main/res/layout/activity_mainn.xml" value="0.24739583333333334" />
         <entry key="app/src/main/res/layout/adapter_data.xml" value="0.22" />
         <entry key="app/src/main/res/layout/card_water_tracker.xml" value="0.26510416666666664" />
+        <entry key="app/src/main/res/layout/item_post.xml" value="0.1" />
         <entry key="app/src/main/res/layout/water_container.xml" value="0.26510416666666664" />
       </map>
     </option>

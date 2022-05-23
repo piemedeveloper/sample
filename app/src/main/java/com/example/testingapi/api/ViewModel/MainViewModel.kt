@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testingapi.api.MainRepository
 import com.example.testingapi.api.data.DataX
+import com.example.testingapi.api.data.response.Data
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.launch
@@ -20,11 +21,16 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
 
     private val _dataList = MutableLiveData<List<DataX>>()
     val dataList : LiveData<List<DataX>> =_dataList
+
+    private val _pies = MutableLiveData<List<Data>>()
+    val pies : LiveData<List<Data>> =_pies
+
    private val _errorMessage = MutableLiveData<String>()
     val errorMessage : LiveData<String> =_errorMessage
 
 init {
     getAllData()
+    getPies()
 }
     fun getAllData() {
 viewModelScope.launch {
@@ -34,4 +40,14 @@ viewModelScope.launch {
     Log.d("VIEWMODEL","$response")
 }
     }
+
+    fun getPies() {
+viewModelScope.launch {
+  val response=repository.getPies()
+
+    _pies.value =response.data
+    Log.d("PIES","$response")
+}
+    }
+
 }

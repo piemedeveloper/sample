@@ -24,7 +24,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.testingapi.api.compose.data.MockData
 import com.example.testingapi.api.compose.view.CountDownView
+import com.example.testingapi.api.compose.view.PieList
 import com.example.testingapi.databinding.ActivityComposeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -41,7 +43,9 @@ class ComposeActivity : AppCompatActivity() {
         binding.compose.setContent {
             MyTheme() {
                 TransparentStatusBar(windows = window)
-                MyApp()
+               // MyApp()
+                val pies = MockData.tweets
+                PieList(pies = pies)
             }
         }
 

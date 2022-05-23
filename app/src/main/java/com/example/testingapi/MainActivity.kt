@@ -7,8 +7,10 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testingapi.api.ViewModel.MainViewModel
 import com.example.testingapi.api.Adapter.MainAdapter
+import com.example.testingapi.api.Adapter.PiesAdapter
 import com.example.testingapi.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
 
-    val adapter = MainAdapter()
+    val adapter = PiesAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.recyclerview.adapter = adapter
-        binding.recyclerview.layoutManager = GridLayoutManager(this,2)
-        viewModel.dataList.observe(this, Observer {
+        binding.recyclerview.layoutManager = LinearLayoutManager(this)
+        viewModel.pies.observe(this, Observer {
             Log.d(TAG, "onCreate: $it")
             adapter.setDataList(it)
         }
