@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.errorMessage.observe(this, Observer {
         })
 
-        viewModel.getAllData()
+
     }
 }
 

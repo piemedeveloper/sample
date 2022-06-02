@@ -9,10 +9,10 @@ import retrofit2.http.Path
 
 interface PieoneApi {
 
-    @POST("service")
-    suspend fun getData(
-    @Body mainRequest: MainRequest
-    ): DataMan
+//    @POST("service")
+//    suspend fun getData(
+//    @Body mainRequest: MainRequest
+//    ): DataMan
 
     @POST("service")
     suspend fun getPies(

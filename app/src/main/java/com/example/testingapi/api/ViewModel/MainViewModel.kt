@@ -19,8 +19,6 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: MainRepository)  : ViewModel() {
 
-    private val _dataList = MutableLiveData<List<DataX>>()
-    val dataList : LiveData<List<DataX>> =_dataList
 
     private val _pies = MutableLiveData<List<Data>>()
     val pies : LiveData<List<Data>> =_pies
@@ -29,17 +27,10 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
     val errorMessage : LiveData<String> =_errorMessage
 
 init {
-    getAllData()
+
     getPies()
 }
-    fun getAllData() {
-viewModelScope.launch {
-  val response=repository.getData()
 
-    _dataList.value =response.data
-    Log.d("VIEWMODEL","$response")
-}
-    }
 
     fun getPies() {
 viewModelScope.launch {

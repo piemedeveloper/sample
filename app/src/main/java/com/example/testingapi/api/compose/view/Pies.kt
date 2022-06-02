@@ -20,8 +20,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.annotation.ExperimentalCoilApi
 import com.example.testingapi.api.compose.model.Pie
 import com.google.accompanist.coil.rememberCoilPainter
+import okio.utf8Size
 
 @Composable
 fun PieList(pies: List<Pie>){
@@ -37,9 +39,25 @@ fun PieList(pies: List<Pie>){
         }
     }
 }
+@ExperimentalCoilApi
+@Composable
+fun DogCard(pie: Pie) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(15.dp),
+        elevation = 10.dp
+    ) {
+        Image(
+            painter = rememberCoilPainter(pie.imageUrl),
+            contentDescription = null
+        )
+    }
+}
 
 @Composable
-fun Tweet(pie: Pie){
+fun Tweet(pie: Pie)
+{
     Row(
         modifier = Modifier.fillMaxWidth()
     ){
@@ -101,6 +119,7 @@ fun Tweet(pie: Pie){
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(10.dp))
                     )
+
                 }
             }
 
