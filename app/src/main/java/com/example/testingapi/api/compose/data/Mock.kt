@@ -14,7 +14,7 @@ object MockData {
                 profilePic = "https://external-preview.redd.it/1T-uR-y5Sw9ima02pxp70JXbAHhzwlAe5gmV0V3Jp9U.png?width=640&crop=smart&auto=webp&s=a6133f8dedc7e950f8be0d158809932a2e2a12ca"
             ),
             hasImage = true,
-            imageUrl = "https://www.rollingstone.com/wp-content/uploads/2021/08/kanye-west-donda-review.jpg",
+            imageUrl = "https://www.kaluhiskitchen.com/wp-content/uploads/2015/08/sweet-and-sour-pork-with-pineapple-salsa_how-to-make-sweet-and-sour-pork_kaluhiskitchen.com_best-kenyan-food-blog.jpg",
             numComments = 10,
             numLikes = 121,
             numRetweets = 67,
