@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testingapi.api.MainRepository
 import com.example.testingapi.api.data.response.Data
+import com.example.testingapi.api.data.response.DataX
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,6 +18,10 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
 
     private var _pies: MutableLiveData<List<Data>> = MutableLiveData<List<Data>>()
     var pies: LiveData<List<Data>> = _pies
+
+    private var _wallet: MutableLiveData<List<DataX>> = MutableLiveData<List<DataX>>()
+    var wallet: LiveData<List<DataX>> = _wallet
+
     var isLoading = mutableStateOf(false)
 //
 //    private val _pies = MutableLiveData<List<Data>>()
@@ -26,8 +31,8 @@ class MainViewModel @Inject constructor(private val repository: MainRepository) 
     val errorMessage : LiveData<String> =_errorMessage
 
 init {
-
-    getPies()
+    getWallet()
+    //getPies()
 }
 
 
@@ -36,8 +41,17 @@ viewModelScope.launch {
   val response=repository.getPies()
 
     _pies.value =response.data
-    Log.d("PIES","$response")
+    Log.d("PIEESS","$response")
 }
+    }
+
+    fun getWallet() {
+        viewModelScope.launch {
+            val response=repository.getWallet()
+
+            _wallet.value =response.data
+            Log.d("WALLET","$response")
+        }
     }
 //    suspend fun getUserData(): Resouce<List<UserResponse>> {
 //        val result = repository.getPies()
